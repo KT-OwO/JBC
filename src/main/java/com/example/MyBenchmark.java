@@ -1,6 +1,5 @@
 package com.example;
 
-import java.lang.foreign.MemorySegment.Scope;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -21,7 +20,7 @@ import org.openjdk.jmh.annotations.Warmup;
 @Warmup(iterations = 5, time = 1)
 @Measurement(iterations = 10, time = 1)
 @Fork(value = 3)
-@State(Scope.Thread)
+@State(org.openjdk.jmh.annotations.Scope.Thread)
 public class MyBenchmark {
 
     @Benchmark
